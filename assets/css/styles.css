@@ -1,0 +1,194 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 20px;
+}
+
+/* Gradient Background */
+.gradient-background {
+  background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+  color: #fff;
+}
+
+/* Sticky Navbar */
+.sticky-top {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Links */
+.nav-link {
+  color: #fff !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff !important;
+  border-bottom: 2px solid #000000;
+}
+
+/* Hero Section */
+.hero-section {
+  background: url("../Images/pexels-caio-56759.jpg") no-repeat center
+    center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  animation: fadeBg 15s infinite;
+}
+
+@keyframes fadeBg {
+  0% {
+    background-image: url("../Images/Header-1.jpg");
+  }
+  33% {
+    background-image: url("../Images/Header-1.jpg");
+  }
+  66% {
+    background-image: url("../Images/Header-3.jpg");
+  }
+  100% {
+    background-image: url("../Images/pexels-caio-56759.jpg");
+  }
+}
+
+/* About Section */
+.about-section {
+  background: url("../Images/pexels-sanketgraphy-15547664.jpg") no-repeat center
+    center/cover;
+  animation: fadeBgAbout 15s infinite;
+}
+
+@keyframes fadeBgAbout {
+  0% {
+    background-image: url("../Images/pexels-wildlittlethingsphoto-27178153.jpg");
+  }
+  50% {
+    background-image: url("../Images/Header-1.jpg");
+  }
+  100% {
+    background-image: url("../Images/Header-2.jpg");
+  }
+}
+
+/* Services Section */
+.service-item img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Portfolio Section */
+.portfolio-item img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Testimonial */
+.testimonial {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.btn-primary{
+  background-color: green;
+}
+
+/* Button Hover Effect */
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #000000;
+}
+
+/* Footer */
+footer {
+  margin-top: 50px;
+}
+
+footer .list-unstyled li {
+  margin-bottom: 1rem;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+footer a:hover {
+  color: #007bff;
+  transform: scale(1.1);
+}
+
+/* Transition Effect for Anchor Elements */
+a {
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #007bff;
+}
+nav {
+  border-radius: 15px;
+  color: #74ebd5;
+}
+.bg-success{
+  /* display: inline-block; */
+  margin: 0;
+  padding: 0;
+  border-radius: 15px;
+}
+#login-btn{
+  background-color: rgb(255, 0, 255);
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.btn {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #004085;
+  transform: scale(1.05);
+}
+
+#login-btn:hover {
+  color: white;
+  background-color: #0056b3;
+}
+.hero-section {
+  background: linear-gradient(to right, #4facfe, #00f2fe); /* Example gradient */
+  border-radius: 15px;
+  padding: 60px 0;
+}
+
+.hero-section h1, .hero-section p {
+  background-color: rgba(0, 128, 0, 0.7); /* Adjust opacity as needed */
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
