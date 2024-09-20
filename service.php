@@ -191,4 +191,3 @@ require 'includes/db.php';
 </div>
 
 <?php include 'includes/footer.php'; ?>
-<!-- I have to add some more features -->
