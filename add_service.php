@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $title = $_POST['title'];
     $description = $_POST['description'];
     $price = $_POST['price'];
+    $contact = $_POST['contact'];
     $user_id = $_SESSION['user_id'];
 
     // File Upload Configurations
@@ -75,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="text" name="title" placeholder="Service Title" required>
                 <textarea name="description" placeholder="Service Description" required></textarea>
                 <input type="number" name="price" placeholder="Price" required>
-                
+                <input type="tel" name="contact" placeholder="Contact number">
                 <label for="icon">Upload Your Icon (Profile Picture):</label>
                 <input type="file" name="icon" accept="image/*">
                 
