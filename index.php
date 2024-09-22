@@ -20,7 +20,6 @@
             /* Adjust padding as needed */
             text-align: center;
             /* Center text */
-
         }
     </style>
 </head>
@@ -245,7 +244,7 @@
         <hr>
         <p>&copy; 2024 <strong>Freelancing</strong> | All rights reserved.</p>
     </footer>
-    <script src="freelance\assets\js\scripts.js"></script>
+    <script src="assets\js\scripts.js"></script>
 </body>
 
 </html>

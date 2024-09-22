@@ -127,6 +127,15 @@ require 'includes/db.php';
     /* Consistent font family */
   }
 
+  .contact {
+    /* font-weight: 600; */
+    color: #ffcc00;
+    /* Bright color for emphasis */
+    margin-bottom: 10px;
+    font-family: "Roboto", sans-serif;
+    /* Consistent font family */
+  }
+
   /* Author Styling */
   .author {
     font-size: 0.95rem;
@@ -174,20 +183,19 @@ require 'includes/db.php';
     }
   }
 
-.btn{
-  padding-inline: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: white;
-  color: black;
-  text-decoration: none;
-  border-radius: 15px;
-  margin-top: 10px;
-  font-weight: bolder;
-  text-transform: uppercase;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
+  .btn {
+    padding-inline: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 15px;
+    margin-top: 10px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+  }
 </style>
 
 <!-- Link to the CSS file -->
@@ -197,7 +205,7 @@ require 'includes/db.php';
   <div class="services-grid">
     <?php
     // Fetch services from the database
-    $stmt = $pdo->prepare("SELECT s.title, s.description, s.price, s.icon, u.username FROM services s JOIN users u ON s.user_id = u.user_id");
+    $stmt = $pdo->prepare("SELECT s.title, s.description, s.price, s.contact, s.icon, u.username FROM services s JOIN users u ON s.user_id = u.user_id");
     $stmt->execute();
     $services = $stmt->fetchAll();
 
@@ -217,7 +225,11 @@ require 'includes/db.php';
         echo '<h3>' . htmlspecialchars($service['title']) . '</h3>';
         echo '<p>' . htmlspecialchars($service['description']) . '</p>';
         echo '<p class="price">Price: $' . htmlspecialchars($service['price']) . '</p>';
-        echo '<p class="author">Offered by: ' . htmlspecialchars($service['username']) . '</p><a href="service.php" class="btn">Hire</a>';
+        if ($service['contact'] > 0) {
+          echo '<p class="contact">Contact: ' . htmlspecialchars($service['contact']) . '</p>';
+        }
+
+        echo '<p class="author">Offered by: ' . htmlspecialchars($service['username']) . '</p><a href="client.php" class="btn">Hire</a>';
         echo '</div>';
 
         echo '</div>';
