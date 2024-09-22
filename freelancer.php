@@ -1,5 +1,5 @@
-<?php 
-include 'includes/header.php'; 
+<?php
+include 'includes/header.php';
 session_start();
 
 // Check if the user is logged in and is a freelancer
@@ -31,150 +31,160 @@ $orders = $ordersStmt->fetchAll();
 
 <!DOCTYPE html>
 <html lang="en">
-    <style>
-        /* Global Styling */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 20px;
-    color: #333;
-}
-
-.freelancer-dashboard-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px;
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    animation: slideIn 0.6s ease-out;
-}
-
-.dashboard-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #e0e0e0;
-}
-
-h1 {
-    font-size: 2.5em;
-    margin: 0;
-    color: #333;
-    font-weight: 700;
-}
-
-h2 {
-    font-size: 1.75em;
-    margin-top: 40px;
-    margin-bottom: 20px;
-    color: #555;
-    font-weight: 500;
-}
-
-.btn-logout {
-    padding: 12px 20px;
-    background-color: #e76f51;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 1em;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-logout:hover {
-    background-color: #c44536;
-    transform: translateY(-3px);
-}
-
-/* Tables Styling */
-.services-table, .orders-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    animation: fadeInUp 0.8s ease-in-out;
-}
-
-.services-table th, .orders-table th, 
-.services-table td, .orders-table td {
-    padding: 15px;
-    border: 1px solid #ddd;
-    text-align: left;
-    font-size: 1em;
-    color: #555;
-}
-
-.services-table th, .orders-table th {
-    background-color: #f5f5f5;
-    font-weight: 600;
-    color: #333;
-}
-
-.services-table tr, .orders-table tr {
-    transition: background-color 0.3s ease;
-}
-
-.services-table tr:hover, .orders-table tr:hover {
-    background-color: #fafafa;
-}
-
-.services-table td, .orders-table td {
-    vertical-align: middle;
-}
-
-/* Button Styling */
-.btn-add-service {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 12px 25px;
-    background-color: #4caf50;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 1.1em;
-    font-weight: 600;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-add-service:hover {
-    background-color: #388e3c;
-    transform: translateY(-3px);
-}
-
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
+<style>
+    /* Global Styling */
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 20px;
+        color: #333;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateX(-15px);
+    .freelancer-dashboard-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        animation: slideIn 0.6s ease-out;
     }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
 
-    </style>
+    .dashboard-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #e0e0e0;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        margin: 0;
+        color: #333;
+        font-weight: 700;
+    }
+
+    h2 {
+        font-size: 1.75em;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        color: #555;
+        font-weight: 500;
+    }
+
+    .btn-logout {
+        padding: 12px 20px;
+        background-color: #e76f51;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 1em;
+        font-weight: 600;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-logout:hover {
+        background-color: #c44536;
+        transform: translateY(-3px);
+    }
+
+    /* Tables Styling */
+    .services-table,
+    .orders-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        animation: fadeInUp 0.8s ease-in-out;
+    }
+
+    .services-table th,
+    .orders-table th,
+    .services-table td,
+    .orders-table td {
+        padding: 15px;
+        border: 1px solid #ddd;
+        text-align: left;
+        font-size: 1em;
+        color: #555;
+    }
+
+    .services-table th,
+    .orders-table th {
+        background-color: #f5f5f5;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .services-table tr,
+    .orders-table tr {
+        transition: background-color 0.3s ease;
+    }
+
+    .services-table tr:hover,
+    .orders-table tr:hover {
+        background-color: #fafafa;
+    }
+
+    .services-table td,
+    .orders-table td {
+        vertical-align: middle;
+    }
+
+    /* Button Styling */
+    .btn-add-service {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 12px 25px;
+        background-color: #4caf50;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 1.1em;
+        font-weight: 600;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-add-service:hover {
+        background-color: #388e3c;
+        transform: translateY(-3px);
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateX(-15px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+</style>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freelancer Dashboard</title>
-   <!-- Link to the CSS file -->
+    <!-- Link to the CSS file -->
 </head>
+
 <body>
     <div class="freelancer-dashboard-container">
         <header class="dashboard-header">
@@ -183,7 +193,7 @@ h2 {
         </header>
 
         <h2>My Services</h2>
-        
+
         <?php if (count($services) > 0): ?>
             <table class="services-table">
                 <thead>
@@ -216,7 +226,7 @@ h2 {
         </div>
 
         <h2>Orders Received</h2>
-        
+
         <?php if (count($orders) > 0): ?>
             <table class="orders-table">
                 <thead>
@@ -247,4 +257,5 @@ h2 {
 
     <?php include 'includes/footer.php'; ?>
 </body>
+
 </html>

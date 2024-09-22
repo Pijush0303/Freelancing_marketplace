@@ -114,7 +114,7 @@ h3 {
   margin-bottom: 30px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.btn-primary{
+.btn-primary {
   background-color: green;
 }
 
@@ -156,13 +156,13 @@ nav {
   border-radius: 15px;
   color: #74ebd5;
 }
-.bg-success{
+.bg-success {
   /* display: inline-block; */
   margin: 0;
   padding: 0;
   border-radius: 15px;
 }
-#login-btn{
+#login-btn {
   background-color: rgb(255, 0, 255);
   margin-right: 10px;
   margin-left: 10px;
@@ -181,12 +181,17 @@ nav {
   background-color: #0056b3;
 }
 .hero-section {
-  background: linear-gradient(to right, #4facfe, #00f2fe); /* Example gradient */
+  background: linear-gradient(
+    to right,
+    #4facfe,
+    #00f2fe
+  ); /* Example gradient */
   border-radius: 15px;
   padding: 60px 0;
 }
 
-.hero-section h1, .hero-section p {
+.hero-section h1,
+.hero-section p {
   background-color: rgba(0, 128, 0, 0.7); /* Adjust opacity as needed */
   display: inline-block;
   padding: 10px 20px;
